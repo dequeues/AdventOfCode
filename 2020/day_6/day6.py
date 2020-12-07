@@ -18,7 +18,7 @@ def part1() -> int:
     return total
 
 
-def part2():
+def part2() -> int:
     total: int = 0
     for group in inputlist:
         letter_counter = Counter(group)
