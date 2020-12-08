@@ -1,4 +1,6 @@
 from re import match
+import common  # noqa pylint: disable=unused-import
+import utils
 
 
 REQUIRED_FIELDS = {
@@ -14,29 +16,18 @@ REQUIRED_FIELDS = {
     'pid': (lambda n: int(n) and len(n) == 9),
 }
 
-
-def get_input_as_list() -> list[str]:
-    with open('2020/day_4/input') as file:
-        return [str(line.strip()) for line in file.read().split('\n\n')
-                if line.strip()]
-
-
-input_as_list = get_input_as_list()
+input_as_list = utils.get_day_data(4, '\n\n')
 
 
 def get_passports_dict_from_list() -> list[dict[str, str]]:
-    passports: list[dict[str, str]] = []
+    passport_list: list[dict[str, str]] = []
     for line in input_as_list:
         line = line.replace('\n', ' ').replace(' ', ',')
         sections = line.split(',')
         keyval = [section.split(':') for section in sections]
-        passports.append(
-            dict([
-                    (split[0], split[1]) for split in keyval
-                    if len(split) == 2
-            ])
-        )
-    return passports
+        passport_list.append(dict((key, value) for (key, value) in keyval))
+
+    return passport_list
 
 
 def has_all_required_fields(passport: dict[str, str]) -> bool:

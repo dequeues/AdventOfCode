@@ -1,15 +1,12 @@
 import re
+import common  # noqa pylint: disable=unused-import
+import utils
 
 
-def get_input_as_list() -> list[str]:
-    with open('2020/day_2/input') as file:
-        return [str(line.strip()) for line in file.read().split('\n')]
-
-
-def format_input(input: list[str]) -> list[tuple[int, int, str, str]]:
+def format_input(input_data: list[str]) -> list[tuple[int, int, str, str]]:
     outlist: list[tuple[int, int, str, str]] = []
     part_re = re.compile('([0-9]+)-([0-9]+) ([a-zA-Z]): ([a-zA-Z]+)')
-    for line in input:
+    for line in input_data:
         split = part_re.match(line)
         if split:
             outlist.append((
@@ -21,7 +18,8 @@ def format_input(input: list[str]) -> list[tuple[int, int, str, str]]:
     return outlist
 
 
-formatted_input = format_input(get_input_as_list())
+input_list: list[str] = utils.get_day_data(2)
+formatted_input = format_input(input_list)
 
 
 def part1() -> int:
@@ -29,7 +27,7 @@ def part1() -> int:
     for tup in formatted_input:
         password_min, password_max, password_char, password = tup
         charcount: int = password.count(password_char)
-        if charcount >= password_min and charcount <= password_max:
+        if password_max >= charcount >= password_min:
             valid_passwords += 1
 
     return valid_passwords

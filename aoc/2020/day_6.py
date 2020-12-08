@@ -1,13 +1,9 @@
 from collections import Counter
+import common  # noqa pylint: disable=unused-import
+import utils
 
 
-def get_input_as_list() -> list[str]:
-    with open('2020/day_6/input') as file:
-        return [str(line.strip()) for line in file.read().split('\n\n')
-                if line.strip()]
-
-
-inputlist = get_input_as_list()
+inputlist = utils.get_day_data(6, '\n\n')
 
 
 def part1() -> int:
