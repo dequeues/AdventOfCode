@@ -48,7 +48,7 @@ def new(day: int) -> None:
 
     try:
         with open(file_path_script, 'x') as file:
-            file.write(jinja.get_template('new.jinja').render())
+            file.write(jinja.get_template('new.jinja').render({'day': day}))
     except FileExistsError as error:
         print(F'Could not create {file_path_script}: {error}')
 
