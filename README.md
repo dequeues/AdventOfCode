@@ -31,3 +31,4 @@ $ poetry run aoc new 2
 |[06](https://adventofcode.com/2020/day/6)|Custom Customs|[day_6.py](/aoc/2020/day_6.py)|⭐⭐|
 |[07](https://adventofcode.com/2020/day/7)|Handy Haversacks|[day_7.py](/aoc/2020/day_7.py)|⭐⭐|
 |[08](https://adventofcode.com/2020/day/8)|Handheld Halting|[day_8.py](/aoc/2020/day_8.py)|⭐⭐|
+|[09](https://adventofcode.com/2020/day/9)|Encoding Error|[day_9.py](/aoc/2020/day_9.py)|⭐⭐|
