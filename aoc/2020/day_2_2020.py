@@ -1,20 +1,22 @@
 import re
-import common  # noqa pylint: disable=unused-import
-import utils
+
+from aoc import utils
 
 
 def format_input(input_data: list[str]) -> list[tuple[int, int, str, str]]:
     outlist: list[tuple[int, int, str, str]] = []
-    part_re = re.compile('([0-9]+)-([0-9]+) ([a-zA-Z]): ([a-zA-Z]+)')
+    part_re = re.compile("([0-9]+)-([0-9]+) ([a-zA-Z]): ([a-zA-Z]+)")
     for line in input_data:
         split = part_re.match(line)
         if split:
-            outlist.append((
-                int(split.group(1)),
-                int(split.group(2)),
-                str(split.group(3)),
-                str(split.group(4))
-            ))
+            outlist.append(
+                (
+                    int(split.group(1)),
+                    int(split.group(2)),
+                    str(split.group(3)),
+                    str(split.group(4)),
+                )
+            )
     return outlist
 
 
@@ -37,14 +39,13 @@ def part2() -> int:
     valid_passwords: int = 0
     for tup in formatted_input:
         password_min, password_max, password_char, password = tup
-        if (
-            (password[password_min - 1] == password_char) ^
-            (password[password_max - 1] == password_char)
+        if (password[password_min - 1] == password_char) ^ (
+            password[password_max - 1] == password_char
         ):
             valid_passwords += 1
 
     return valid_passwords
 
 
-print(F'Part 1 answer: {part1()}')
-print(F'Part 2 answer: {part2()}')
+print(f"Part 1 answer: {part1()}")
+print(f"Part 2 answer: {part2()}")

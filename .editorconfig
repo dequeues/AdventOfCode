@@ -13,5 +13,5 @@ insert_final_newline = true
 indent_size = 4
 max_line_length = 80
 
-[aoc/2020/input_data/day_*]
+[aoc/*/input_data/day_*]
 insert_final_newline = false

@@ -1,5 +1,4 @@
-import common  # noqa pylint: disable=unused-import
-import utils
+from aoc import utils
 
 input_list: list[int] = utils.convert_list_to_ints(utils.get_day_data(1))
 
@@ -21,5 +20,5 @@ def part2() -> int:
     return 0
 
 
-print(F'Part 1 answer: {part1()}')
-print(F'Part 2 answer: {part2()}')
+print(f"Part 1 answer: {part1()}")
+print(f"Part 2 answer: {part2()}")

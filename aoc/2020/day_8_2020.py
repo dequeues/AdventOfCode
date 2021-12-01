@@ -1,5 +1,4 @@
-import common  # noqa pylint: disable=unused-import
-import utils
+from aoc import utils
 
 inputdata = utils.get_day_data(8)
 
@@ -21,12 +20,12 @@ def process_instructions(instructions: list[str]) -> tuple[int, bool]:
         operation, argument = process_instruction_string(instructions[i])
 
         ran_instructions.add(i)
-        if operation == 'acc':
+        if operation == "acc":
             accumulator += int(argument)
             i += 1
-        elif operation == 'jmp':
+        elif operation == "jmp":
             i += int(argument)
-        elif operation == 'nop':
+        elif operation == "nop":
             i += 1
 
     return (accumulator, False)
@@ -39,10 +38,10 @@ def part1() -> int:
 def part2() -> int:
     for i, instruction in enumerate(inputdata):
         operation, _ = process_instruction_string(instruction)
-        if operation in ['jmp', 'nop']:
+        if operation in ["jmp", "nop"]:
             new_instructions = inputdata.copy()
             new_instructions[i] = instruction.replace(
-                operation, 'jmp' if operation == 'nop' else 'nop'
+                operation, "jmp" if operation == "nop" else "nop"
             )
             accumulator, completed = process_instructions(new_instructions)
             if completed:
@@ -51,5 +50,5 @@ def part2() -> int:
     return 0
 
 
-print(F'Part 1 answer: {part1()}')
-print(F'Part 2 answer: {part2()}')
+print(f"Part 1 answer: {part1()}")
+print(f"Part 2 answer: {part2()}")

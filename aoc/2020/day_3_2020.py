@@ -1,8 +1,7 @@
-import common  # noqa pylint: disable=unused-import
-import utils
+from aoc import utils
 
 
-SQUARE, TREE = ('.', '#')
+SQUARE, TREE = (".", "#")
 
 input_list: list[str] = utils.get_day_data(3)
 
@@ -13,7 +12,7 @@ def get_trees_in_slope(d_x: int, d_y: int) -> int:
         0,
         0,
         len(input_list) - d_y,
-        len(input_list[0])
+        len(input_list[0]),
     )
 
     while cur_y < length:
@@ -39,5 +38,5 @@ def part2(part1_trees: int) -> int:
 
 
 PART1_TREES = part1()
-print(F'Part 1 answer: {PART1_TREES}')
-print(F'Part 2 answer: {part2(PART1_TREES)}')
+print(f"Part 1 answer: {PART1_TREES}")
+print(f"Part 2 answer: {part2(PART1_TREES)}")

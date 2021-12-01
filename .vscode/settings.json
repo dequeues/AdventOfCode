@@ -3,9 +3,9 @@
   "python.linting.enabled": true,
   "python.analysis.extraPaths": [
     "./aoc",
-    "./aoc/2020"
+    "./aoc/2020",
+    "./aoc/2021"
   ],
-  "python.linting.pycodestyleEnabled": true,
   "python.linting.pylintEnabled": true,
   "python.linting.pylintArgs": [
     "--disable", "E0401,C0114,C0116"
@@ -13,6 +13,5 @@
   "python.linting.pylintCategorySeverity.convention": "Error",
   "python.linting.flake8CategorySeverity.F": "Error",
   "python.linting.flake8CategorySeverity.W": "Error",
-  "python.linting.pycodestyleCategorySeverity.E": "Error",
-  "python.linting.pycodestyleCategorySeverity.W": "Error"
+  "python.linting.mypyEnabled": true
 }

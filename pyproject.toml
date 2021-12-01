@@ -3,13 +3,20 @@ name = "aoc"
 version = "0.1.0"
 description = ""
 authors = ["dequeues <dequeues@outlook.com>"]
+packages = [
+  { include = "./aoc/utils.py" }
+]
+
 
 [tool.poetry.dependencies]
 python = "^3.9"
 click = "^7.1.2"
 Jinja2 = "^2.11.2"
-
-[tool.poetry.dev-dependencies]
+pylint = "^2.12.1"
+flake8 = "^4.0.1"
+black = "^21.11b1"
+mypy = "^0.910"
+pre-commit = "^2.16.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
