@@ -20,6 +20,12 @@ $ poetry run aoc new 2
 
 ---
 
+## 2021
+| Day | Name | Solution | Stars |
+|:------------- |:-------------|:-----:|:-----:|
+|[01](https://adventofcode.com/2021/day/1)|Sonar Sweep|[day_1_2020.py](/aoc/2021/day_1_2021.py)|⭐⭐|
+|[02](https://adventofcode.com/2021/day/2)|Dive!|[day_2_2020.py](/aoc/2021/day_2_2021.py)|⭐⭐|
+
 ## 2020
 | Day | Name | Solution | Stars |
 |:------------- |:-------------|:-----:|:-----:|
@@ -33,10 +39,3 @@ $ poetry run aoc new 2
 |[08](https://adventofcode.com/2020/day/8)|Handheld Halting|[day_8_2020.py](/aoc/2020/day_8_2020.py)|⭐⭐|
 |[09](https://adventofcode.com/2020/day/9)|Encoding Error|[day_9_2020.py](/aoc/2020/day_9_2020.py)|⭐⭐|
 |[10](https://adventofcode.com/2020/day/10)|Adapter Array|[day_10_2020.py](/aoc/2020/day_10_2020.py)|⭐⭐|
-
-
-## 2021
-| Day | Name | Solution | Stars |
-|:------------- |:-------------|:-----:|:-----:|
-|[01](https://adventofcode.com/2021/day/1)|Report Repair|[day_1_2020.py](/aoc/2021/day_1_2021.py)|⭐⭐|
-|[02](https://adventofcode.com/2021/day/1)|Report Repair|[day_2_2020.py](/aoc/2021/day_2_2021.py)|⭐⭐|
