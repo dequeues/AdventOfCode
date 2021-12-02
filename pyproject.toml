@@ -24,3 +24,6 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 aoc="aoc.entry_point:cli"
+
+[tool.isort]
+profile = 'black'
