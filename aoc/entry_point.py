@@ -1,6 +1,7 @@
 import importlib
 import pathlib
 from datetime import datetime
+from os import utime
 
 import click
 import jinja2
@@ -42,7 +43,8 @@ def new(day: int, year: int) -> None:
         print(f"Could not create {file_path_script}: {error}")
 
     try:
-        open(file_path_input, "x", encoding="utf-8").close()
+        with open(file_path_input, "x", encoding="utf-8"):
+            utime(file_path_input, None)
     except FileExistsError as error:
         print(f"Could not create {file_path_input}: {error}")
 
