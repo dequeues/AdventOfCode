@@ -1,5 +1,10 @@
-def get_day_data(day: int, split_delimiter: str = "\n") -> list[str]:
-    with open(f"aoc/2021/input_data/day_{day}", encoding="utf-8") as file:
+def get_day_data(
+    day: int, split_delimiter: str = "\n", test_data: bool = False
+) -> list[str]:
+    file_path = (
+        f"aoc/2021/{'input_data' if not test_data else 'test_data'}/day_{day}"
+    )
+    with open(file_path, encoding="utf-8") as file:
         return [
             str(line.strip())
             for line in file.read().split(split_delimiter)
