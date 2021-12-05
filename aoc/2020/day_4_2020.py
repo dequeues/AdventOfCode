@@ -20,7 +20,7 @@ REQUIRED_FIELDS = {
     "pid": (lambda n: int(n) and len(n) == 9),
 }
 
-input_as_list = utils.get_day_data(4, "\n\n")
+input_as_list = utils.get_day_data(4, split_delimiter="\n\n")
 
 
 def get_passports_dict_from_list() -> list[dict[str, str]]:

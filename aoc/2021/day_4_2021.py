@@ -6,7 +6,7 @@ import numpy as np
 from aoc import utils
 
 
-inputdata = utils.get_day_data(4, "\n")
+inputdata = utils.get_day_data(4, split_delimiter="\n")
 
 
 def part1() -> int:

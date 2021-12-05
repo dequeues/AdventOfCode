@@ -3,7 +3,7 @@ from collections import Counter
 from aoc import utils
 
 
-inputlist = utils.get_day_data(6, "\n\n")
+inputlist = utils.get_day_data(6, split_delimiter="\n\n")
 
 
 def part1() -> int:

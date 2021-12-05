@@ -1,5 +1,5 @@
 [MESSAGES CONTROL]
-disable=missing-module-docstring,missing-function-docstring,import-error,duplicate-code, C0330, C0326
+disable=missing-module-docstring,missing-function-docstring,import-error,duplicate-code, C0330, C0326,missing-class-docstring
 
 [format]
 max-line-length = 88

@@ -1,13 +1,23 @@
-def get_day_data(
-    day: int, split_delimiter: str = "\n", test_data: bool = False
-) -> list[str]:
-    file_path = (
-        f"aoc/2021/{'input_data' if not test_data else 'test_data'}/day_{day}"
-    )
+from dataclasses import dataclass
+from typing import Any
+from typing import Callable
+
+
+@dataclass
+class Options:
+    split_delimiter: str = "\n"
+    test_data: bool = False
+    line_format_func: Callable[[str], Any] = lambda x: x
+
+
+def get_day_data(day: int, **kwargs) -> list[str]:
+    options = Options(**kwargs)
+    dirname = "input_data" if not options.test_data else "test_data"
+    file_path = f"aoc/2021/{dirname}/day_{day}"
     with open(file_path, encoding="utf-8") as file:
         return [
-            str(line.strip())
-            for line in file.read().split(split_delimiter)
+            options.line_format_func(str(line.strip()))
+            for line in file.read().split(options.split_delimiter)
             if line.strip()
         ]
 
