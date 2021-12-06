@@ -15,3 +15,6 @@ max_line_length = 80
 
 [aoc/*/input_data/day_*]
 insert_final_newline = false
+
+[aoc/*/test_data/day_*]
+insert_final_newline = false
