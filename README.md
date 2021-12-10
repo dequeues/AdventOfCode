@@ -32,7 +32,7 @@ $ poetry run aoc new 2
 |[07](https://adventofcode.com/2021/day/7)|The Treachery of Whales|[day_7_2020.py](/aoc/2021/day_7_2021.py)|⭐⭐|
 |[08](https://adventofcode.com/2021/day/8)|Seven Segment Search|[day_8_2020.py](/aoc/2021/day_8_2021.py)|⭐⭐|
 |[09](https://adventofcode.com/2021/day/9)|Smoke Basin|[day_9_2020.py](/aoc/2021/day_9_2021.py)|⭐⭐|
-|[10](https://adventofcode.com/2021/day/10)|Syntax Scoring|[day_10_2020.py](/aoc/2021/day_10_2021.py)| |
+|[10](https://adventofcode.com/2021/day/10)|Syntax Scoring|[day_10_2020.py](/aoc/2021/day_10_2021.py)|⭐⭐|
 
 ## 2020
 | Day | Name | Solution | Stars |
