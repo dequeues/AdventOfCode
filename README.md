@@ -27,6 +27,12 @@ $ poetry run aoc new 2
 |[02](https://adventofcode.com/2021/day/2)|Dive!|[day_2_2020.py](/aoc/2021/day_2_2021.py)|⭐⭐|
 |[03](https://adventofcode.com/2021/day/3)|Binary Diagnostic!|[day_3_2020.py](/aoc/2021/day_3_2021.py)|⭐⭐|
 |[04](https://adventofcode.com/2021/day/4)|Giant Squid|[day_4_2020.py](/aoc/2021/day_4_2021.py)|⭐⭐|
+|[05](https://adventofcode.com/2021/day/5)|Hydrothermal Venture|[day_5_2020.py](/aoc/2021/day_5_2021.py)|⭐⭐|
+|[06](https://adventofcode.com/2021/day/6)|Lanternfish|[day_6_2020.py](/aoc/2021/day_6_2021.py)|⭐⭐|
+|[07](https://adventofcode.com/2021/day/7)|The Treachery of Whales|[day_7_2020.py](/aoc/2021/day_7_2021.py)|⭐⭐|
+|[08](https://adventofcode.com/2021/day/8)|Seven Segment Search|[day_8_2020.py](/aoc/2021/day_8_2021.py)|⭐⭐|
+|[09](https://adventofcode.com/2021/day/9)|Smoke Basin|[day_9_2020.py](/aoc/2021/day_9_2021.py)|⭐⭐|
+|[10](https://adventofcode.com/2021/day/10)|Syntax Scoring|[day_10_2020.py](/aoc/2021/day_10_2021.py)| |
 
 ## 2020
 | Day | Name | Solution | Stars |
