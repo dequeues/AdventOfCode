@@ -52,5 +52,5 @@ def check(line) -> CheckModel:
     return CheckModel(0, stack)
 
 
-print(f"Part 1 answer: {part1()}")
-print(f"Part 2 answer: {part2()}")
+utils.print_result(f"Part 1 answer: {part1()}")
+utils.print_result(f"Part 2 answer: {part2()}")

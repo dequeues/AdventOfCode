@@ -38,5 +38,5 @@ def part2(part1_trees: int) -> int:
 
 
 PART1_TREES = part1()
-print(f"Part 1 answer: {PART1_TREES}")
-print(f"Part 2 answer: {part2(PART1_TREES)}")
+utils.print_result(f"Part 1 answer: {PART1_TREES}")
+utils.print_result(f"Part 2 answer: {part2(PART1_TREES)}")

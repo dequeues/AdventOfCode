@@ -48,5 +48,5 @@ def part2(found: int) -> int:
 
 
 p1: int = part1()
-print(f"Part 1 answer: {p1}")
-print(f"Part 2 answer: {part2(p1)}")
+utils.print_result(f"Part 1 answer: {p1}")
+utils.print_result(f"Part 2 answer: {part2(p1)}")

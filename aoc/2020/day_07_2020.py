@@ -52,5 +52,5 @@ def part2(tree) -> int:
 
 trees = get_tree(inputlist)
 
-print(f"Part 1 answer: {part1(trees)}")
-print(f"Part 2 answer: {part2(trees)}")
+utils.print_result(f"Part 1 answer: {part1(trees)}")
+utils.print_result(f"Part 2 answer: {part2(trees)}")

@@ -88,5 +88,5 @@ def get_grid(max_x: int, max_y: int):
     return np.zeros((max_x, max_y), int)
 
 
-print(f"Part 1 answer: {part1()}")
-print(f"Part 2 answer: {part2()}")
+utils.print_result(f"Part 1 answer: {part1()}")
+utils.print_result(f"Part 2 answer: {part2()}")

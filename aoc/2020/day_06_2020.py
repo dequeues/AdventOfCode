@@ -27,5 +27,5 @@ def part2() -> int:
     return total
 
 
-print(f"Part 1 answer: {part1()}")
-print(f"Part 2 answer: {part2()}")
+utils.print_result(f"Part 1 answer: {part1()}")
+utils.print_result(f"Part 2 answer: {part2()}")

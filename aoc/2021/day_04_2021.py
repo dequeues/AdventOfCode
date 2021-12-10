@@ -65,5 +65,5 @@ def does_board_have_a_winner(board: np.ndarray) -> np.bool_:
     )
 
 
-print(f"Part 1 answer: {part1()}")
-print(f"Part 2 answer: {part2()}")
+utils.print_result(f"Part 1 answer: {part1()}")
+utils.print_result(f"Part 2 answer: {part2()}")

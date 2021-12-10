@@ -24,5 +24,5 @@ def simulate(days_until_spawn: int, sim_length: int) -> int:
     return simulate(0, sim_length - days_until_spawn)
 
 
-print(f"Part 1 answer: {part1()}")
-print(f"Part 2 answer: {part2()}")
+utils.print_result(f"Part 1 answer: {part1()}")
+utils.print_result(f"Part 2 answer: {part2()}")
