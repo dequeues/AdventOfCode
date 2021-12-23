@@ -36,6 +36,7 @@ $ poetry run aoc new 2
 |[11](https://adventofcode.com/2021/day/11)|Dumbo Octopus|[day_11_2020.py](/aoc/2021/day_11_2021.py)|⭐⭐|
 |[12](https://adventofcode.com/2021/day/12)|Passage Pathing|[day_12_2020.py](/aoc/2021/day_12_2021.py)|⭐⭐|
 |[13](https://adventofcode.com/2021/day/13)|Transparent Origami|[day_13_2020.py](/aoc/2021/day_13_2021.py)|⭐⭐|
+|[14](https://adventofcode.com/2021/day/14)|Extended Polymerization|[day_14_2020.py](/aoc/2021/day_14_2021.py)|⭐⭐|
 
 ## 2020
 | Day | Name | Solution | Stars |
