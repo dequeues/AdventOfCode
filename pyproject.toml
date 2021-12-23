@@ -20,6 +20,8 @@ pre-commit = "^2.16.0"
 numpy = "^1.21.4"
 flake8-print = "^4.0.0"
 loguru = "^0.5.3"
+networkx = "^2.6.3"
+autopep8 = "^1.6.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
