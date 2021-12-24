@@ -39,6 +39,7 @@ $ poetry run aoc new 2
 |[14](https://adventofcode.com/2021/day/14)|Extended Polymerization|[day_14_2020.py](/aoc/2021/day_14_2021.py)|⭐⭐|
 |[15](https://adventofcode.com/2021/day/15)|Chiton|[day_15_2020.py](/aoc/2021/day_15_2021.py)|⭐⭐|
 |[16](https://adventofcode.com/2021/day/16)|Packet Decoder|[day_16_2020.py](/aoc/2021/day_16_2021.py)|⭐⭐|
+|[17](https://adventofcode.com/2021/day/17)|Trick Shot|[day_17_2020.py](/aoc/2021/day_17_2021.py)|⭐⭐|
 
 ## 2020
 | Day | Name | Solution | Stars |
