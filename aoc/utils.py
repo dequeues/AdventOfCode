@@ -18,7 +18,8 @@ def get_day_data(day: int, **kwargs: Any) -> list[str]:
     day_padded = f"{int(day):02d}"
     options = Options(**kwargs)
     dirname = "input_data" if not options.test_data else "test_data"
-    file_path = f"aoc/2021/{dirname}/day_{day_padded}"
+    # TODO: Remove hardcoded year
+    file_path = f"aoc/2022/{dirname}/day_{day_padded}"
     with open(file_path, encoding="utf-8") as file:
         return [
             options.line_format_func(str(line.strip()))
