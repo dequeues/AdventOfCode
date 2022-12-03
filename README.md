@@ -24,6 +24,7 @@ $ poetry run aoc new 2
 | Day | Name | Solution | Stars |
 |:------------- |:-------------|:-----:|:-----:|
 |[01](https://adventofcode.com/2022/day/1)|Calorie Counting|[aoc/2022/day_01_2022.py](/aoc/2022/day_01_2022.py)|⭐⭐|
+|[02](https://adventofcode.com/2022/day/2)|Rock Paper Scissors|[aoc/2022/day_02_2022.py](/aoc/2022/day_02_2022.py)|⭐|
 
 ## 2021
 | Day | Name | Solution | Stars |
