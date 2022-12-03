@@ -24,6 +24,8 @@ def run(day: str, year: int) -> None:
     file_path = pathlib.Path(f"aoc/{year}/day_{day}_{year}.py")
     if file_path.is_file():
         importlib.import_module(f"aoc.{year}.day_{day}_{year}")
+    else:
+        logger.error(f"{file_path} does not exist.")
 
 
 @cli.command()
