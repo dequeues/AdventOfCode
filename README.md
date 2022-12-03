@@ -20,6 +20,11 @@ $ poetry run aoc new 2
 
 ---
 
+## 2022
+| Day | Name | Solution | Stars |
+|:------------- |:-------------|:-----:|:-----:|
+|[01](https://adventofcode.com/2022/day/1#part1)|Calorie Counting|[aoc/2022/day_01_2022.py](/aoc/2022/day_01_2022.py)|⭐|
+
 ## 2021
 | Day | Name | Solution | Stars |
 |:------------- |:-------------|:-----:|:-----:|
