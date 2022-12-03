@@ -37,12 +37,11 @@ def new(day: str, year: int) -> None:
         loader=jinja2.PackageLoader("aoc", "templates"),
         keep_trailing_newline=True,
     )
+    day_padded = f"{int(day):02d}"
 
-    day = f"{int(day):02d}"
-
-    file_path_script = pathlib.Path(f"aoc/{year}/day_{day}_{year}.py")
-    file_path_input = pathlib.Path(f"aoc/{year}/input_data/day_{day}")
-    file_path_test_input = pathlib.Path(f"aoc/{year}/test_data/day_{day}")
+    file_path_script = pathlib.Path(f"aoc/{year}/day_{day_padded}_{year}.py")
+    file_path_input = pathlib.Path(f"aoc/{year}/input_data/day_{day_padded}")
+    file_path_test_input = pathlib.Path(f"aoc/{year}/test_data/day_{day_padded}")
 
     try:
         with open(file_path_script, "x", encoding="utf-8") as file:

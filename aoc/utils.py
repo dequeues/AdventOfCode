@@ -44,9 +44,10 @@ def time_func(func: Any) -> Callable[..., Callable[..., T]]:
         time1 = time.time()
         ret = func(*args, **kwargs)
         time2 = time.time()
-        logger.debug(
-            f"{func.__name__} function took {(time2-time1)*1000.0:.3f} ms"
-        )
+        if not kwargs.get("silent"):
+            logger.debug(
+                f"{func.__name__} function took {(time2-time1)*1000.0:.3f} ms"
+            )
 
         return ret
 

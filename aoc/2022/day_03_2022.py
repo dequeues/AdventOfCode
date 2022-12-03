@@ -1,3 +1,4 @@
+from typing import Any
 from aoc import utils
 
 
@@ -11,7 +12,7 @@ def get_priority(letter: str) -> int:
 
 
 @ utils.time_func
-def part1() -> int:
+def part1(*args: Any, **kwargs: Any) -> int:  # pylint: disable=unused-argument
     rucksack_priorities: list[int] = []
     for rucksack in inputdata:
         compartment_one, compartment_two = set(
@@ -24,7 +25,7 @@ def part1() -> int:
 
 
 @ utils.time_func
-def part2() -> int:
+def part2(*args: Any, **kwargs: Any) -> int:  # pylint: disable=unused-argument
     rucksack_priorities: list[int] = []
     groups = [inputdata[i:i+3] for i in range(0, len(inputdata), 3)]
 
@@ -35,5 +36,11 @@ def part2() -> int:
     return sum(rucksack_priorities)
 
 
+# Fixed test data
+inputdata = utils.get_day_data(3, test_data=True)
+assert part1(silent=True) == 157  # type: ignore
+assert part2(silent=True) == 70  # type: ignore
+
+inputdata = utils.get_day_data(3, test_data=False)
 utils.print_result(F'Part 1 answer: {part1()}')
 utils.print_result(F'Part 2 answer: {part2()}')
