@@ -5,19 +5,21 @@ from os import utime
 
 import click
 import jinja2
+import pandoc
+from pandoc.types import Header, Link, Plain, Space, Str, Table
 
 from .logger import logger
 
 
-@click.group()
+@ click.group()
 def cli() -> None:
     pass
 
 
-@cli.command()
-@click.argument("day")
-@click.option("--day", "day")
-@click.option("--year", "year", default=datetime.now().year)
+@ cli.command()
+@ click.argument("day")
+@ click.option("--day", "day")
+@ click.option("--year", "year", default=datetime.now().year)
 def run(day: str, year: int) -> None:
     day = f"{int(day):02d}"
     logger.info(f"Running day {day} of {year}")
@@ -28,11 +30,13 @@ def run(day: str, year: int) -> None:
         logger.error(f"{file_path} does not exist.")
 
 
-@cli.command()
-@click.argument("day")
-@click.option("--day", "day")
-@click.option("--year", "year", default=datetime.now().year)
-def new(day: str, year: int) -> None:
+@ cli.command()
+@ click.argument("day")
+@ click.option("--day", "day")
+@ click.argument("name")
+@ click.option("--name", "name")
+@ click.option("--year", "year", default=datetime.now().year)
+def new(day: str, year: int, name: str) -> None:
     jinja = jinja2.Environment(
         loader=jinja2.PackageLoader("aoc", "templates"),
         keep_trailing_newline=True,
@@ -46,7 +50,8 @@ def new(day: str, year: int) -> None:
     try:
         with open(file_path_script, "x", encoding="utf-8") as file:
             file.write(jinja.get_template("new.jinja").render({"day": day}))
-    except FileExistsError as error:
+    except (FileExistsError, FileNotFoundError) as error:
+        logger.error(file_path_script.resolve())
         logger.error(f"Could not create {file_path_script}: {error}")
 
     for f_p in [file_path_input, file_path_test_input]:
@@ -56,4 +61,35 @@ def new(day: str, year: int) -> None:
         except FileExistsError as error:
             logger.error(f"Could not create {f_p}: {error}")
 
+    readme_path = pathlib.Path("README.md")
+
+    with open(readme_path.resolve(), "r", encoding="utf-8") as file_handler:
+        pandoc_data = pandoc.read(file_handler.read())
+
+    heading_index: int = 0
+    # Find index for the year heading
+    for element, path in pandoc.iter(pandoc_data, path=True):
+        if element != pandoc_data:
+            if isinstance(element, Header):
+                if element[2][0][0] == str(year):
+                    _, heading_index = path[-1]
+
+    pandoc_data[1][heading_index+1][4].insert(
+        len(pandoc_data[1][heading_index+1][4]) + 1,
+        [
+            [Plain([Link(('', [], []), [Str(day_padded)],
+                         (f"https://adventofcode.com/{year}/day/{day}", ''))])],
+            [Plain([Str(name)])],
+            [Plain([Link(('', [], []), [Str(f"{file_path_script}")],
+                         (f"/{file_path_script}", ''))])],
+            [Plain([Str('')])]
+        ]
+    )
+
+    pandoc.write(pandoc_data, readme_path, "gfm")
+
     click.echo(f"Completed processing for day {day}")
+
+
+if __name__ == "__main__":
+    cli()
