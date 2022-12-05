@@ -8,7 +8,8 @@
   ],
   "python.linting.pylintEnabled": true,
   "python.linting.pylintArgs": [
-    "--disable", "E0401,C0114,C0116"
+    "--disable",
+    "E0401,C0114,C0116"
   ],
   "python.linting.pylintCategorySeverity.convention": "Error",
   "python.linting.flake8CategorySeverity.F": "Error",

@@ -12,6 +12,7 @@ class Options:
     split_delimiter: str = "\n"
     test_data: bool = False
     line_format_func: Callable[[str], Any] = lambda x: x
+    no_strip: bool = False
 
 
 def get_day_data(day: int, **kwargs: Any) -> list[str]:
@@ -21,11 +22,12 @@ def get_day_data(day: int, **kwargs: Any) -> list[str]:
     # TODO: Remove hardcoded year
     file_path = f"aoc/2022/{dirname}/day_{day_padded}"
     with open(file_path, encoding="utf-8") as file:
-        return [
-            options.line_format_func(str(line.strip()))
-            for line in file.read().split(options.split_delimiter)
-            if line.strip()
-        ]
+        lines = []
+        for line in file.read().split(options.split_delimiter):
+            line_formatted = options.line_format_func(
+                str(line.strip()) if not options.no_strip else line)
+            lines.append(line_formatted)
+        return lines
 
 
 def convert_list_to_ints(data: list[str]) -> list[int]:

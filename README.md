@@ -27,12 +27,13 @@ $ poetry run aoc new 2
 
 ## 2022
 
-| Day                                       | Name                    |                           Solution                            | Stars |
-| :---------------------------------------- | :---------------------- | :-----------------------------------------------------------: | :---: |
-| [01](https://adventofcode.com/2022/day/1) | Calorie Counting        |     [aoc/2022/day\_01\_2022.py](/aoc/2022/day_01_2022.py)     |  ⭐⭐   |
-| [02](https://adventofcode.com/2022/day/2) | Rock Paper Scissors     |     [aoc/2022/day\_02\_2022.py](/aoc/2022/day_02_2022.py)     |  ⭐⭐   |
-| [03](https://adventofcode.com/2022/day/3) | Rucksack Reorganization |     [aoc/2022/day\_03\_2022.py](/aoc/2022/day_03_2022.py)     |  ⭐⭐   |
-| [04](https://adventofcode.com/2022/day/4) | Camp Cleanup            |     [aoc/2022/day\_04\_2022.py](/aoc/2022/day_04_2022.py)     |  ⭐⭐   |
+| Day                                       | Name                    |                       Solution                        | Stars |
+| :---------------------------------------- | :---------------------- | :---------------------------------------------------: | :---: |
+| [01](https://adventofcode.com/2022/day/1) | Calorie Counting        | [aoc/2022/day\_01\_2022.py](/aoc/2022/day_01_2022.py) |  ⭐⭐   |
+| [02](https://adventofcode.com/2022/day/2) | Rock Paper Scissors     | [aoc/2022/day\_02\_2022.py](/aoc/2022/day_02_2022.py) |  ⭐⭐   |
+| [03](https://adventofcode.com/2022/day/3) | Rucksack Reorganization | [aoc/2022/day\_03\_2022.py](/aoc/2022/day_03_2022.py) |  ⭐⭐   |
+| [04](https://adventofcode.com/2022/day/4) | Camp Cleanup            | [aoc/2022/day\_04\_2022.py](/aoc/2022/day_04_2022.py) |  ⭐⭐   |
+| [05](https://adventofcode.com/2022/day/5) | Supply Stacks           | [aoc/2022/day\_05\_2022.py](/aoc/2022/day_05_2022.py) |  ⭐⭐   |
 
 ## 2021
 
