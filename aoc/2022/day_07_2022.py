@@ -2,6 +2,9 @@ from dataclasses import dataclass, field
 from typing import Any, Union, Iterator
 from aoc import utils
 
+PART_TWO_REQUIRED_SIZE = 30000000
+PART_TWO_TOTAL_SIZE = 70000000
+
 
 @dataclass
 class File:
@@ -48,6 +51,18 @@ def get_sum_of_directories_with_max_size(tree: Directory, max_size: int) -> int:
             if len(directory.children_nodes) > 0:
                 total += get_sum_of_directories_with_max_size(directory, max_size)
     return total
+
+
+def get_all_directories(tree: Directory) -> list[Directory]:
+    directory_list = []
+    for directory in tree:
+        if isinstance(directory, Directory):
+            inner_list = get_all_directories(directory)
+            if len(inner_list) > 0:
+                directory_list += inner_list
+
+            directory_list.append(directory)
+    return directory_list
 
 
 def create_directory_tree() -> Directory:
@@ -98,13 +113,20 @@ def part1(*args: Any, **kwargs: Any) -> int:  # pylint: disable=unused-argument
 
 @ utils.time_func
 def part2(*args: Any, **kwargs: Any) -> int:  # pylint: disable=unused-argument
+    directory = create_directory_tree()
+    directories_sorted = sorted(get_all_directories(directory), key=lambda x: x.size)
+    for inner_directory in directories_sorted:
+        free_space = PART_TWO_TOTAL_SIZE - (directory.size - inner_directory.size)
+        if free_space >= PART_TWO_REQUIRED_SIZE:
+            return inner_directory.size
+
     return 0
 
 
 # Fixed test data
 inputdata = utils.get_day_data(7, test_data=True)
 assert part1(silent=True) == 95437  # type: ignore
-assert part2(silent=True) == 0  # type: ignore
+assert part2(silent=True) == 24933642  # type: ignore
 
 inputdata = utils.get_day_data(7, test_data=False)
 utils.print_result(F'Part 1 answer: {part1()}')
