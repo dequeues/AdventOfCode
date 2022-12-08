@@ -36,6 +36,7 @@ $ poetry run aoc new 2
 | [05](https://adventofcode.com/2022/day/5) | Supply Stacks           | [aoc/2022/day\_05\_2022.py](/aoc/2022/day_05_2022.py) |  ⭐⭐   |
 | [06](https://adventofcode.com/2022/day/6) | Tuning Trouble          | [aoc/2022/day\_06\_2022.py](/aoc/2022/day_06_2022.py) |  ⭐⭐   |
 | [07](https://adventofcode.com/2022/day/7) | No Space Left On Device | [aoc/2022/day\_07\_2022.py](/aoc/2022/day_07_2022.py) |  ⭐⭐   |
+| [08](https://adventofcode.com/2022/day/8) | Treetop Tree House      | [aoc/2022/day\_08\_2022.py](/aoc/2022/day_08_2022.py) |  ⭐⭐   |
 
 ## 2021
 
