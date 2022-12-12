@@ -5,6 +5,8 @@ from networkx import DiGraph
 
 from aoc import utils
 
+LOWERCASE_A_CHAR_VAL = 96
+
 
 class HeightMap:
     def __init__(self) -> None:
@@ -49,6 +51,16 @@ class HeightMap:
                 self.graph, source=self.start, target=self.target)
         ) - 1
 
+    def get_steps_for_best_signal(self) -> int:
+        all_steps = []
+        for _, steps in nx_shortest_paths.single_target_shortest_path(
+            self.graph, self.target, cutoff=self.get_fewest_steps()
+        ).items():
+            if self.heightmap.get(steps[0]) == LOWERCASE_A_CHAR_VAL + 1:
+                all_steps.append(len(steps))
+
+        return min(all_steps) - 1
+
 
 @ utils.time_func
 def part1(*args: Any, **kwargs: Any) -> int:  # pylint: disable=unused-argument
@@ -58,7 +70,8 @@ def part1(*args: Any, **kwargs: Any) -> int:  # pylint: disable=unused-argument
 
 @ utils.time_func
 def part2(*args: Any, **kwargs: Any) -> int:  # pylint: disable=unused-argument
-    return 0
+    heightmap = HeightMap()
+    return heightmap.get_steps_for_best_signal()
 
 
 day_func_arguments = {}
@@ -66,7 +79,7 @@ day_func_arguments = {}
 # Fixed test data
 inputdata = utils.get_day_data(12, test_data=True, **day_func_arguments)
 assert part1(silent=True) == 31  # type: ignore
-assert part2(silent=True) == 0  # type: ignore
+assert part2(silent=True) == 29  # type: ignore
 
 inputdata = utils.get_day_data(12, test_data=False, **day_func_arguments)
 utils.print_result(F'Part 1 answer: {part1()}')

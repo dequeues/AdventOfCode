@@ -40,7 +40,7 @@ $ poetry run aoc new 2
 | [09](https://adventofcode.com/2022/day/9)  | Rope Bridge             | [aoc/2022/day\_09\_2022.py](/aoc/2022/day_09_2022.py) |  ⭐⭐   |
 | [10](https://adventofcode.com/2022/day/10) | Cathode-Ray Tube        | [aoc/2022/day\_10\_2022.py](/aoc/2022/day_10_2022.py) |  ⭐⭐   |
 | [11](https://adventofcode.com/2022/day/11) | Monkey in the Middle    | [aoc/2022/day\_11\_2022.py](/aoc/2022/day_11_2022.py) |  ⭐⭐   |
-| [12](https://adventofcode.com/2022/day/12) | Hill Climbing Algorithm | [aoc/2022/day\_12\_2022.py](/aoc/2022/day_12_2022.py) |    ⭐   |
+| [12](https://adventofcode.com/2022/day/12) | Hill Climbing Algorithm | [aoc/2022/day\_12\_2022.py](/aoc/2022/day_12_2022.py) |  ⭐⭐   |
 
 ## 2021
 
