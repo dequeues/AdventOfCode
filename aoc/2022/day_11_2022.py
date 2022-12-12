@@ -93,8 +93,7 @@ class MonkeyInventory:
                             modulo: int = 0
                             ) -> int:
         self.run(rounds_to_run, worry_increase, modulo)
-
-        return 1
+        return self.get_monkeys_highest_inspected_sorted()
 
     def get_monkeys_highest_inspected_sorted(self) -> int:
         two_highest = sorted(
