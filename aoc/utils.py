@@ -1,9 +1,10 @@
 import time
 from dataclasses import dataclass
-from typing import Any
-from typing import Callable
-from typing import TypeVar
-from re import findall
+from datetime import date
+from inspect import stack
+from re import findall, search
+from typing import Any, Callable, TypeVar
+
 from aoc.logger import logger  # type: ignore
 
 
@@ -19,8 +20,12 @@ def get_day_data(day: int, **kwargs: Any) -> list[str]:
     day_padded = f"{int(day):02d}"
     options = Options(**kwargs)
     dirname = "input_data" if not options.test_data else "test_data"
-    # TODO: Remove hardcoded year
-    file_path = f"aoc/2022/{dirname}/day_{day_padded}"
+    year_re = search(r"day_\d*_(\d{4}).py", stack()[1].filename)
+    if year_re:
+        year = year_re.group(1)
+    else:
+        year = str(date.today().year)
+    file_path = f"aoc/{year}/{dirname}/day_{day_padded}"
     with open(file_path, encoding="utf-8") as file:
         lines = []
         for line in file.read().split(options.split_delimiter):
