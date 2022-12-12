@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from typing import Any
 from typing import Callable
 from typing import TypeVar
-
+from re import findall
 from aoc.logger import logger  # type: ignore
 
 
@@ -54,3 +54,7 @@ def time_func(func: Any) -> Callable[..., Callable[..., T]]:
         return ret
 
     return wrap
+
+
+def get_all_digits_re(string_to_evaluate: str) -> list[int]:
+    return list(map(int, findall(r"\d+", string_to_evaluate)))
