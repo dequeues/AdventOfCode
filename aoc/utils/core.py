@@ -63,3 +63,8 @@ def time_func(func: Any) -> Callable[..., Callable[..., T]]:
 
 def get_all_digits_re(string_to_evaluate: str) -> list[int]:
     return list(map(int, findall(r"\d+", string_to_evaluate)))
+
+
+def parse_ints(string: str) -> tuple[int, ...]:
+    groups = findall(r"-?\d+", string)
+    return tuple(map(int, groups))

@@ -42,6 +42,8 @@ $ poetry run aoc new 2
 | [11](https://adventofcode.com/2022/day/11) | Monkey in the Middle    | [aoc/2022/day\_11\_2022.py](/aoc/2022/day_11_2022.py) |  ⭐⭐   |
 | [12](https://adventofcode.com/2022/day/12) | Hill Climbing Algorithm | [aoc/2022/day\_12\_2022.py](/aoc/2022/day_12_2022.py) |  ⭐⭐   |
 | [13](https://adventofcode.com/2022/day/13) | Distress Signal         | [aoc/2022/day\_13\_2022.py](/aoc/2022/day_13_2022.py) |  ⭐⭐   |
+| [14](https://adventofcode.com/2022/day/14) | Regolith Reservoir      | [aoc/2022/day\_14\_2022.py](/aoc/2022/day_14_2022.py) |  ⭐⭐   |
+| [15](https://adventofcode.com/2022/day/15) | Beacon Exclusion Zone   | [aoc/2022/day\_15\_2022.py](/aoc/2022/day_15_2022.py) |  ⭐⭐   |
 
 ## 2021
 
