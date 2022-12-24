@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["dequeues <dequeues@outlook.com>"]
 packages = [
-  { include = "./aoc/utils.py" }
+  { include = "./aoc/utils/core.py" }
 ]
 
 

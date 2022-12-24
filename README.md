@@ -44,6 +44,7 @@ $ poetry run aoc new 2
 | [13](https://adventofcode.com/2022/day/13) | Distress Signal         | [aoc/2022/day\_13\_2022.py](/aoc/2022/day_13_2022.py) |  ⭐⭐   |
 | [14](https://adventofcode.com/2022/day/14) | Regolith Reservoir      | [aoc/2022/day\_14\_2022.py](/aoc/2022/day_14_2022.py) |  ⭐⭐   |
 | [15](https://adventofcode.com/2022/day/15) | Beacon Exclusion Zone   | [aoc/2022/day\_15\_2022.py](/aoc/2022/day_15_2022.py) |  ⭐⭐   |
+| [16](https://adventofcode.com/2022/day/16) | Proboscidea Volcanium   | [aoc/2022/day\_16\_2022.py](/aoc/2022/day_16_2022.py) |  ⭐⭐   |
 
 ## 2021
 
