@@ -61,32 +61,36 @@ def new(day: str, year: int, name: str) -> None:
         except FileExistsError as error:
             logger.error(f"Could not create {f_p}: {error}")
 
-    readme_path = pathlib.Path("README.md")
+    # TODO: This doesn't seem to work, and I have no idea why. Maybe for another time? Maybe not. Who knows.
+    # readme_path = pathlib.Path("README.md")
 
-    with open(readme_path.resolve(), "r", encoding="utf-8") as file_handler:
-        pandoc_data = pandoc.read(file_handler.read())
+    # with open(readme_path.resolve(), "r", encoding="utf-8") as file_handler:
+    #     pandoc_data = pandoc.read(file_handler.read())
 
-    heading_index: int = 0
-    # Find index for the year heading
-    for element, path in pandoc.iter(pandoc_data, path=True):
-        if element != pandoc_data:
-            if isinstance(element, Header):
-                if element[2][0][0] == str(year):
-                    _, heading_index = path[-1]
+    # heading_index: int = 0
+    # # Find index for the year heading
+    # for element, path in pandoc.iter(pandoc_data, path=True):
+    #     if element != pandoc_data:
+    #         if isinstance(element, Header):
+    #             if element[2][0][0] == str(year):
+    #                 _, heading_index = path[-1]
 
-    pandoc_data[1][heading_index+1][4].insert(
-        len(pandoc_data[1][heading_index+1][4]) + 1,
-        [
-            [Plain([Link(('', [], []), [Str(day_padded)],
-                         (f"https://adventofcode.com/{year}/day/{day}", ''))])],
-            [Plain([Str(name)])],
-            [Plain([Link(('', [], []), [Str(f"{file_path_script}")],
-                         (f"/{file_path_script}", ''))])],
-            [Plain([Str('')])]
-        ]
-    )
+    # Stderr:       | JSON parse error: Error in $.blocks[11][1]: cannot unpack array of length 1 into a tuple of length 3
+    # HUH?
 
-    pandoc.write(pandoc_data, readme_path, "gfm")
+    # pandoc_data[1][heading_index+1][4].insert(
+    #     len(pandoc_data[1][heading_index+1][4]) + 1,
+    #     [
+    #         [Plain([Link(('', [], []), [Str(day_padded)],
+    #                      (f"https://adventofcode.com/{year}/day/{day}", ''))])],
+    #         [Plain([Str(name)])],
+    #         [Plain([Link(('', [], []), [Str(f"{file_path_script}")],
+    #                      (f"/{file_path_script}", ''))])],
+    #         [Plain([Str('')])]
+    #     ]
+    # )
+
+    # pandoc.write(pandoc_data, readme_path, "gfm")
 
     click.echo(f"Completed processing for day {day}")
 
