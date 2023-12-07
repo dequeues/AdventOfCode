@@ -107,10 +107,10 @@ def part2(*args: Any, **kwargs: Any) -> int:  # pylint: disable=unused-argument
     return PressureValves(26).part_two_result()
 
 
-day_func_arguments: dict[str, Any] = {}
+day_func_arguments = utils.DaySettings()
 
 # Fixed test data
-inputdata = utils.get_day_data(16, test_data=True, **day_func_arguments)
+inputdata = utils.get_day_data(16, test_data=True, day_settings=day_func_arguments)
 assert part1(silent=True) == 1651  # type: ignore
 assert part2(silent=True) == 1707  # type: ignore
 

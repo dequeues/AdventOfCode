@@ -3,9 +3,18 @@ from dataclasses import dataclass
 from datetime import date
 from inspect import stack
 from re import findall, search
-from typing import Any, Callable, TypeVar
+from typing import Any, Callable, Optional, TypeVar
+
+from pydantic import BaseSettings
 
 from aoc.logger import logger  # type: ignore
+
+
+class DaySettings(BaseSettings):
+    split_delimiter: str = "\n"
+    test_data: bool = False
+    line_format_func: Callable[[str], Any] = lambda x: x
+    no_strip: bool = False
 
 
 @dataclass
@@ -16,9 +25,17 @@ class Options:
     no_strip: bool = False
 
 
-def get_day_data(day: int, **kwargs: Any) -> list[str]:
+def get_day_data(
+    day: int,
+    day_settings: Optional[DaySettings],
+    **kwargs: Any
+) -> list[str]:
+    options: Options | DaySettings
+    if not day_settings:
+        options = Options(**kwargs)
+    else:
+        options = day_settings
     day_padded = f"{int(day):02d}"
-    options = Options(**kwargs)
     dirname = "input_data" if not options.test_data else "test_data"
     year_re = search(r"day_\d*_(\d{4}).py", stack()[1].filename)
     if year_re:
