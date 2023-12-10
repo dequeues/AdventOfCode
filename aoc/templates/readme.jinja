@@ -1,0 +1,38 @@
+# Advent of Code
+
+My solutions for [Advent Of Code](https://adventofcode.com/)
+
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
+## Installation
+
+``` bash
+$ pip install poetry
+$ poetry install
+```
+
+## Usage
+
+#### Run a puzzle solution for a day
+
+``` bash
+$ poetry run aoc run 1
+```
+
+#### Create assets for a new day
+
+``` bash
+$ poetry run aoc new 2
+```
+
+-----
+
+{% for year, value in data.items() %}
+## {{ year }}
+
+| Day                                        | Name                    |                       Solution                        | Stars |
+| :----------------------------------------- | :---------------------- | :---------------------------------------------------: | :---: |
+{% for data in value -%}
+| [{{ '%02d' % loop.index }}](https://adventofcode.com/{{year|e}}/day/1) | {{ data.name|e }} | [aoc/{{year|e}}/day/_01/_{{year|e}}.py](/aoc/{{year|e}}/day_01_{{year|e}}.py) | {% if data.stars %}{{ "⭐" * data.stars }}{% endif %} |
+{% endfor %}
+{% endfor %}

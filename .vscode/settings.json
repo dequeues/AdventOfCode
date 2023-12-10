@@ -4,29 +4,19 @@
   "python.analysis.extraPaths": [
     "./aoc",
     "./aoc/2020",
-    "./aoc/2021"
+    "./aoc/2021",
+    "./aoc/2022",
+    "./aoc/2023"
   ],
-  "python.linting.pylintEnabled": true,
-  "python.linting.pylintArgs": [
-    "--disable",
-    "E0401,C0114,C0116"
-  ],
-  "python.linting.pylintCategorySeverity.convention": "Error",
-  "python.linting.flake8CategorySeverity.F": "Error",
-  "python.linting.flake8CategorySeverity.W": "Error",
-  "python.linting.mypyEnabled": true,
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "ms-python.python",
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
-  "python.testing.unittestArgs": [
-    "-v",
-    "-s",
-    "./tests",
-    "-p",
-    "test_*.py"
-  ],
-  "python.testing.pytestEnabled": false,
-  "python.testing.unittestEnabled": true
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.organizeImports": true
+    }
+  },
 }

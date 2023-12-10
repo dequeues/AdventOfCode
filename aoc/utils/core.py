@@ -13,7 +13,10 @@ from aoc.logger import logger  # type: ignore
 class DaySettings(BaseSettings):
     split_delimiter: str = "\n"
     test_data: bool = False
-    line_format_func: Callable[[str], Any] = lambda x: x
+
+    def line_format_func(x: str) -> Any:
+        return x
+
     no_strip: bool = False
 
 
@@ -21,14 +24,16 @@ class DaySettings(BaseSettings):
 class Options:
     split_delimiter: str = "\n"
     test_data: bool = False
-    line_format_func: Callable[[str], Any] = lambda x: x
+    part_two: Optional[bool] = False
+
+    def line_format_func(x: str) -> Any:
+        return x
+
     no_strip: bool = False
 
 
 def get_day_data(
-    day: int,
-    day_settings: Optional[DaySettings],
-    **kwargs: Any
+    day: int, day_settings: Optional[DaySettings] = None, **kwargs: Any
 ) -> list[str]:
     options: Options | DaySettings
     if not day_settings:
@@ -42,12 +47,18 @@ def get_day_data(
         year = year_re.group(1)
     else:
         year = str(date.today().year)
-    file_path = f"aoc/{year}/{dirname}/day_{day_padded}"
+
+    if options.part_two:
+        file_path = f"aoc/{year}/{dirname}/day_{day_padded}_2"
+    else:
+        file_path = f"aoc/{year}/{dirname}/day_{day_padded}"
+
     with open(file_path, encoding="utf-8") as file:
         lines = []
         for line in file.read().split(options.split_delimiter):
             line_formatted = options.line_format_func(
-                str(line.strip()) if not options.no_strip else line)
+                str(line.strip()) if not options.no_strip else line
+            )
             lines.append(line_formatted)
         return lines
 
@@ -69,9 +80,7 @@ def time_func(func: Any) -> Callable[..., Callable[..., T]]:
         ret = func(*args, **kwargs)
         time2 = time.time()
         if not kwargs.get("silent"):
-            logger.debug(
-                f"{func.__name__} function took {(time2-time1)*1000.0:.3f} ms"
-            )
+            logger.debug(f"{func.__name__} function took {(time2-time1)*1000.0:.3f} ms")
 
         return ret
 

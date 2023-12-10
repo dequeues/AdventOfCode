@@ -1,0 +1,184 @@
+{
+  "2022": [
+    {
+      "name": "Calorie Counting",
+      "stars": 2
+    },
+    {
+      "name": "Rock Paper Scissors",
+      "stars": 2
+    },
+    {
+      "name": "Rucksack Reorganization",
+      "stars": 2
+    },
+    {
+      "name": "Camp Cleanup",
+      "stars": 2
+    },
+    {
+      "name": "Supply Stacks",
+      "stars": 2
+    },
+    {
+      "name": "Tuning Trouble",
+      "stars": 2
+    },
+    {
+      "name": "No Space Left On Device",
+      "stars": 2
+    },
+    {
+      "name": "Treetop Tree House",
+      "stars": 2
+    },
+    {
+      "name": "Rope Bridge",
+      "stars": 2
+    },
+    {
+      "name": "Cathode-Ray Tube",
+      "stars": 2
+    },
+    {
+      "name": "Monkey in the Middle",
+      "stars": 2
+    },
+    {
+      "name": "Hill Climbing Algorithm",
+      "stars": 2
+    },
+    {
+      "name": "Distress Signal",
+      "stars": 2
+    },
+    {
+      "name": "Regolith Reservoir",
+      "stars": 2
+    },
+    {
+      "name": "Beacon Exclusion Zone",
+      "stars": 2
+    },
+    {
+      "name": "Proboscidea Volcanium",
+      "stars": 2
+    }
+  ],
+  "2021": [
+    {
+      "name": "Sonar Sweep",
+      "stars": 2
+    },
+    {
+      "name": "Dive\\!",
+      "stars": 2
+    },
+    {
+      "name": "Binary Diagnostic\\!",
+      "stars": 2
+    },
+    {
+      "name": "Giant Squid",
+      "stars": 2
+    },
+    {
+      "name": "Hydrothermal Venture",
+      "stars": 2
+    },
+    {
+      "name": "Lanternfish",
+      "stars": 2
+    },
+    {
+      "name": "The Treachery of Whales",
+      "stars": 2
+    },
+    {
+      "name": "Seven Segment Search",
+      "stars": 2
+    },
+    {
+      "name": "Smoke Basin",
+      "stars": 2
+    },
+    {
+      "name": "Syntax Scoring",
+      "stars": 2
+    },
+    {
+      "name": "Dumbo Octopus",
+      "stars": 2
+    },
+    {
+      "name": "Passage Pathing",
+      "stars": 2
+    },
+    {
+      "name": "Transparent Origami",
+      "stars": 2
+    },
+    {
+      "name": "Extended Polymerization",
+      "stars": 2
+    },
+    {
+      "name": "Chiton",
+      "stars": 2
+    },
+    {
+      "name": "Packet Decoder",
+      "stars": 2
+    },
+    {
+      "name": "Trick Shot",
+      "stars": 2
+    },
+    {
+      "name": "Snailfish",
+      "stars": 2
+    }
+  ],
+  "2020": [
+    {
+      "name": "Report Repair",
+      "stars": 2
+    },
+    {
+      "name": "Password Philosophy",
+      "stars": 2
+    },
+    {
+      "name": "Toboggan Trajectory",
+      "stars": 2
+    },
+    {
+      "name": "Passport Processing",
+      "stars": 2
+    },
+    {
+      "name": "Binary Boarding",
+      "stars": 2
+    },
+    {
+      "name": "Custom Customs",
+      "stars": 2
+    },
+    {
+      "name": "Handy Haversacks",
+      "stars": 2
+    },
+    {
+      "name": "Handheld Halting",
+      "stars": 2
+    },
+    {
+      "name": "Encoding Error",
+      "stars": 2
+    },
+    {
+      "name": "Adapter Array",
+      "stars": 2
+    }
+  ]
+}

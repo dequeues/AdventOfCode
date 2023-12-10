@@ -1,1 +1,1 @@
-from aoc.utils.core import *  # noqa: disable=F401
+from aoc.utils.core import *  # noqa: F401, F403
