@@ -2,6 +2,8 @@
 
 My solutions for [Advent Of Code](https://adventofcode.com/)
 
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
 ## Installation
 
 ``` bash
@@ -30,7 +32,8 @@ $ poetry run aoc new 2
 
 | Day                                        | Name                    |                       Solution                        | Stars |
 | :----------------------------------------- | :---------------------- | :---------------------------------------------------: | :---: |
-| [01](https://adventofcode.com/2023/day/1) | Trebuchet? | [aoc/2023/day/_01/_2023.py](/aoc/2023/day_01_2023.py) | ⭐⭐ |
+| [01](https://adventofcode.com/2023/day/1) | Trebuchet?! | [aoc/2023/day/_01/_2023.py](/aoc/2023/day_01_2023.py) | ⭐⭐ |
+| [02](https://adventofcode.com/2023/day/1) | Cube Conundrum | [aoc/2023/day/_01/_2023.py](/aoc/2023/day_01_2023.py) | ⭐⭐ |
 
 
 ## 2022

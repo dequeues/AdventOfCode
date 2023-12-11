@@ -25,9 +25,7 @@ class Options:
     split_delimiter: str = "\n"
     test_data: bool = False
     part_two: Optional[bool] = False
-
-    def line_format_func(x: str) -> Any:
-        return x
+    line_format_func: Callable[[str], Any] = lambda x: x  # noqa: E731
 
     no_strip: bool = False
 
