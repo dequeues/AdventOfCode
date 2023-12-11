@@ -35,7 +35,7 @@ def run(day: str, year: int) -> None:
             importlib.import_module(f"aoc.{year}.day_{day}_{year}")
         except AssertionError:
             _, _, tb = sys.exc_info()
-            traceback.print_tb(tb)  # Fixed format
+            traceback.print_tb(tb)
         else:
             with open("aoc/data/challenges.json") as f:
                 data = json.load(f)
@@ -78,14 +78,17 @@ def new(day: str, year: int, name: str, stars: int) -> None:
         except FileExistsError as error:
             logger.error(f"Could not create {f_p}: {error}")
 
-    with open("aoc/data/challenges.json") as f:
+    with open("aoc/data/challenges.json", "r+") as f:
+        year = str(year)
         data = json.load(f)
         if year not in data:
-            data[str(year)] = []
+            data[year] = []
         data = {key: value for key, value in sorted(data.items(), reverse=True)}
-        data[str(year)].append({"name": name, "stars": stars})
+        data[year].append({"name": name, "stars": stars})
         with open("README.md", "w+", encoding="utf-8") as file:
             file.write(jinja.get_template("readme.jinja").render({"data": data}))
+        print(json.dumps(data))
+        f.write(json.dumps(data))
 
     click.echo(f"Completed processing for day {day}")
 
