@@ -3,9 +3,9 @@ from dataclasses import dataclass
 from datetime import date
 from inspect import stack
 from re import findall, search
-from typing import Any, Callable, Optional, TypeVar
+from typing import Any, Callable, Optional, TypeVar, TypedDict
 
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 
 from aoc.logger import logger  # type: ignore
 
@@ -13,9 +13,7 @@ from aoc.logger import logger  # type: ignore
 class DaySettings(BaseSettings):
     split_delimiter: str = "\n"
     test_data: bool = False
-
-    def line_format_func(x: str) -> Any:
-        return x
+    line_format_func: Callable[[str], Any] = lambda x: x
 
     no_strip: bool = False
 
@@ -31,7 +29,7 @@ class Options:
 
 
 def get_day_data(
-    day: int, day_settings: Optional[DaySettings] = None, **kwargs: Any
+    day: int, day_settings: Optional[DaySettings] = None, **kwargs: int
 ) -> list[str]:
     options: Options | DaySettings
     if not day_settings:

@@ -1,3 +1,5 @@
+# pyright: strict, reportUnusedCallResult=false
+
 import importlib
 import json
 import pathlib
@@ -81,6 +83,7 @@ def new(day: str, year: int, name: str, stars: int) -> None:
     with open("aoc/data/challenges.json", "r+") as f:
         year = str(year)
         data = json.load(f)
+        f.seek(0)
         if year not in data:
             data[year] = []
         data = {key: value for key, value in sorted(data.items(), reverse=True)}
@@ -89,6 +92,7 @@ def new(day: str, year: int, name: str, stars: int) -> None:
             file.write(jinja.get_template("readme.jinja").render({"data": data}))
         print(json.dumps(data))
         f.write(json.dumps(data))
+        f.truncate()
 
     click.echo(f"Completed processing for day {day}")
 

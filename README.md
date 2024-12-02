@@ -28,6 +28,13 @@ $ poetry run aoc new 2
 -----
 
 
+## 2024
+
+| Day                                        | Name                    |                       Solution                        | Stars |
+| :----------------------------------------- | :---------------------- | :---------------------------------------------------: | :---: |
+| [01](https://adventofcode.com/2024/day/1) | Historian Hysteria | [aoc/2024/day/_01/_2024.py](/aoc/2024/day_01_2024.py) | ⭐⭐ |
+
+
 ## 2023
 
 | Day                                        | Name                    |                       Solution                        | Stars |

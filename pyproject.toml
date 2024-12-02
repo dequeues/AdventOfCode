@@ -11,7 +11,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.10.0"
 click = "^7.1.2"
-Jinja2 = "^2.11.2"
+Jinja2 = "^3.0"
 pylint = "^2.12.1"
 flake8 = "^4.0.1"
 black = "^21.11b1"
@@ -30,6 +30,9 @@ isort = "^5.10.1"
 scipy = "^1.9.3"
 matplotlib = "^3.6.2"
 ruff = "^0.1.7"
+pydantic = "^2.10.2"
+pydantic-settings = "^2.6.1"
+types-click = "^7.1.8"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

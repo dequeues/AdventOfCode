@@ -1,25 +1,23 @@
-from typing import Any
-
 import aoc.utils.core as utils
 
 
 @utils.time_func
-def part1(*args: Any, **kwargs: Any) -> int:  # pylint: disable=unused-argument
+def part1(*args: str, **kwargs: int) -> int:  # pylint: disable=unused-argument # pyright: ignore[reportUnusedParameter]
     return 0
 
 
 @utils.time_func
-def part2(*args: Any, **kwargs: Any) -> int:  # pylint: disable=unused-argument
+def part2(*args: str, **kwargs: int) -> int:  # pylint: disable=unused-argument # pyright: ignore[reportUnusedParameter]
     return 0
 
 
-day_func_arguments: dict[str, Any] = {}
+day_func_arguments: dict[str, utils.DaySettings] = {}
 
 # Fixed test data
-inputdata = utils.get_day_data({{day}}, test_data=True, **day_func_arguments)
+inputdata = utils.get_day_data(1, test_data=True, **day_func_arguments)
 assert part1(silent=True) == 0  # type: ignore
 assert part2(silent=True) == 0  # type: ignore
 
-inputdata = utils.get_day_data({{day}}, test_data=False, **day_func_arguments)
+inputdata = utils.get_day_data(1, test_data=False, **day_func_arguments)
 utils.print_result(F'Part 1 answer: {part1()}')
 utils.print_result(F'Part 2 answer: {part2()}')
