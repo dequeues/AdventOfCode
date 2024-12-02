@@ -11,6 +11,8 @@ from os import utime
 import click
 import jinja2
 
+from aoc.utils.core import ChallengeList
+
 from .logger import logger
 
 jinja = jinja2.Environment(
@@ -33,14 +35,15 @@ def run(day: str, year: int) -> None:
     logger.info(f"Running day {day} of {year}")
     file_path = pathlib.Path(f"aoc/{year}/day_{day}_{year}.py")
     if file_path.is_file():
+        _day = None
         try:
-            importlib.import_module(f"aoc.{year}.day_{day}_{year}")
+            _day = importlib.import_module(f"aoc.{year}.day_{day}_{year}")
         except AssertionError:
             _, _, tb = sys.exc_info()
             traceback.print_tb(tb)
         else:
             with open("aoc/data/challenges.json") as f:
-                data = json.load(f)
+                data: ChallengeList = json.load(f)
             if data[str(year)][int(day) - 1]["stars"] != 2 and click.confirm(
                 "Both parts completed. Update README stars?"
             ):
@@ -60,7 +63,7 @@ def run(day: str, year: int) -> None:
 @click.option("--name", "name")
 @click.option("--year", "year", default=datetime.now().year)
 @click.option("--stars", "stars", default=0)
-def new(day: str, year: int, name: str, stars: int) -> None:
+def new(day: str, year: int | str, name: str, stars: int) -> None:
     day_padded = f"{int(day):02d}"
     file_path_script = pathlib.Path(f"aoc/{year}/day_{day_padded}_{year}.py")
     file_path_input = pathlib.Path(f"aoc/{year}/input_data/day_{day_padded}")
@@ -82,7 +85,7 @@ def new(day: str, year: int, name: str, stars: int) -> None:
 
     with open("aoc/data/challenges.json", "r+") as f:
         year = str(year)
-        data = json.load(f)
+        data: ChallengeList = json.load(f)
         f.seek(0)
         if year not in data:
             data[year] = []

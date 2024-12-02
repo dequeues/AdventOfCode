@@ -11,13 +11,15 @@ def part2(*args: str, **kwargs: int) -> int:  # pylint: disable=unused-argument 
     return 0
 
 
-day_func_arguments: dict[str, utils.DaySettings] = {}
+day_func_arguments: utils.DaySettings = utils.DaySettings(
+    line_format_func=lambda x: list(map(int, x.split()))
+)
 
 # Fixed test data
-inputdata = utils.get_day_data(1, test_data=True, **day_func_arguments)
-assert part1(silent=True) == 0  # type: ignore
-assert part2(silent=True) == 0  # type: ignore
+inputdata = utils.get_day_data(1, test_data=True, day_settings=day_func_arguments)
+assert part1(silent=True) == 0
+assert part2(silent=True) == 0
 
-inputdata = utils.get_day_data(1, test_data=False, **day_func_arguments)
-utils.print_result(F'Part 1 answer: {part1()}')
-utils.print_result(F'Part 2 answer: {part2()}')
+inputdata = utils.get_day_data(1, test_data=False, day_settings=day_func_arguments)
+utils.print_result(f"Part 1 answer: {part1()}")
+utils.print_result(f"Part 2 answer: {part2()}")
